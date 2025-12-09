@@ -1,4 +1,4 @@
-const TELEGRAM_BOT_TOKEN = '7603386640:AAGpe3IDJbE2WgoDuvVuv8qoiTeyHgnBNfE';
+const TELEGRAM_BOT_TOKEN = '8446378846:AAFG-bfJXscPFcCHoq9ue-BCOhZP9-iHDsI';
 const ABOUT_TEXT = `
 سلام خوبی؟
 من یه ربات سادم که خیلی سریع نوشته شدم
