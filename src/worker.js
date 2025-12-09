@@ -5,32 +5,14 @@ const TEACHERS = [
 		key: "توجهی",
 		name: "استاد توجهی",
 		titles: [
-			"ریش‌سفید ریاضی",
-			"نرد اعظم",
-			"پدرخوانده مشتق",
-			"قاتل آرامش دانشجو"
+			"کصکش",
+			"عوضی",
+			"اشغال",
+			"پدسگ"
 		],
-		description: "این بابا هرکی رو ببینه با مشتق خفه می‌کنه. حواست جمع باشه!"
+		description: "به تمام معنا میتونه یه MJ باشه."
 	},
-
-	{
-		key: "ابراهیمی",
-		name: "استاد ابراهیمی",
-		titles: [
-			"فرعون فیزیک",
-			"شاه‌فنر",
-			"اژدهای نیرو و گشتاور"
-		],
-		description: "به اندازه جرم یک فیل امتحان می‌گیره."
-	}
 ];
-
-function escapeHTML(str) {
-	return str
-		.replace(/&/g, "&amp;")
-		.replace(/</g, "&lt;")
-		.replace(/>/g, "&gt;");
-}
 
 async function sendMessage(chatId, text) {
 	const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
@@ -80,7 +62,7 @@ export default {
 		const name = args[1];
 
 		if (!name) {
-			await sendMessage(chatId, `احمق! اینجوری باید بزنی:\n<code>/fuck توجهی</code>`);
+			await sendMessage(chatId, `احمق! اینجوری باید بزنی:\n<code>/fuck [اسم معلم]</code>`);
 			return new Response('NO');
 		}
 
