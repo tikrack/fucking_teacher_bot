@@ -37,17 +37,12 @@ export default {
 				const args = message.text.trim().split(" ");
 				const username = args[1];
 
-				if (!username || !username.startsWith("@")) {
+				if (!username) {
 					await sendMessage(chatId, `مرتیکه خر میخاری؟ اینجوری باید وارد کنی\n<code>/fuck [نام معلم]</code>`);
 					return new Response('No username provided');
 				}
 
-
-				if (username.length < 9) {
-					await sendMessage(chatId, "تست");
-				}else {
-					await sendMessage(chatId, "تست");
-				}
+				await sendMessage(chatId, username);
 
 				return new Response('OK');
 			}
