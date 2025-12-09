@@ -1,18 +1,4 @@
 const TELEGRAM_BOT_TOKEN = '8446378846:AAFG-bfJXscPFcCHoq9ue-BCOhZP9-iHDsI';
-const ABOUT_TEXT = `
-سلام خوبی؟
-من یه ربات سادم که خیلی سریع نوشته شدم
-کارمم که معاومه دیگه سوال نداره اصلا نمیدونم چرا این دکمه رو زدی
-حالا به هر حال
-من رو @tikrack 👨🏼‍💻 ساخته اگرم خواستی کد هامو ببینی:
-https://github.com/tikrack/OB_Checker_bot
-اره خلاصه چاکریم ✨🍓
-`
-
-const OB_TEXT = [
-	"این فرد اوبی خیلی زیاد است! ❌",
-	"این فرد پاک پاک و پر از تیتسترون است! ✅"
-];
 
 function escapeHTML(str) {
 	return str
@@ -43,31 +29,25 @@ export default {
 			const message = update.message;
 			const chatId = message?.chat?.id;
 
-			if (!message?.text?.startsWith('/ob') && !message?.text?.startsWith('/about')) {
+			if (!message?.text?.startsWith('/fuck')) {
 				return new Response('Ignored');
 			}
 
-			if (message?.text?.startsWith("/ob")) {
+			if (message?.text?.startsWith("/fuck")) {
 				const args = message.text.trim().split(" ");
 				const username = args[1];
 
 				if (!username || !username.startsWith("@")) {
-					await sendMessage(chatId, `مرتیکه خر میخاری؟ اینجوری باید وارد کنی\n<code>/ob @username</code>`);
+					await sendMessage(chatId, `مرتیکه خر میخاری؟ اینجوری باید وارد کنی\n<code>/fuck [نام معلم]</code>`);
 					return new Response('No username provided');
 				}
 
 
 				if (username.length < 9) {
-					await sendMessage(chatId, OB_TEXT[1]);
+					await sendMessage(chatId, "تست");
 				}else {
-					await sendMessage(chatId, OB_TEXT[0]);
+					await sendMessage(chatId, "تست");
 				}
-
-				return new Response('OK');
-			}
-
-			if (message?.text?.startsWith("/about")) {
-				await sendMessage(chatId, ABOUT_TEXT);
 
 				return new Response('OK');
 			}
